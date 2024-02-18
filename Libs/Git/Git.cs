@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Lancy.Libs.Git
+namespace Lancy.Libs
 {
     public class Git
     {
@@ -38,6 +38,14 @@ namespace Lancy.Libs.Git
             }
 
             return false;
+        }
+
+        public void RewriteIgnore(string exclude)
+        {
+            using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "\\.gitignore"))
+            {
+                sw.WriteLine(exclude);
+            }
         }
     }
 }
