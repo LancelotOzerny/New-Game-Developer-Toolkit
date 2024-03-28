@@ -6,6 +6,7 @@ namespace Lancy.Tools.Git
     public class InitTab : WindowTab
     {
         private bool createGitIgnore;
+        private Vector2 scrollPosition;
         private string excludeFile =
             "/[Ll]ibrary/" + "\n" +
             "/[Tt]emp/" + "\n" +
@@ -62,13 +63,11 @@ namespace Lancy.Tools.Git
 
         public override void Show()
         {
-            GUILayout.Space(20);
             SetLabel("Repository Initializing");
-
-            GUILayout.Space(20);
             createGitIgnore = GUILayout.Toggle(createGitIgnore, "Create .gitignore File");
-
             GUILayout.Space(20);
+            
+            scrollPosition = GUILayout.BeginScrollView(scrollPosition);
             if (createGitIgnore)
             {
                 EditorGUILayout.TextArea(excludeFile, GUILayout.MaxHeight(500));
@@ -83,6 +82,9 @@ namespace Lancy.Tools.Git
                     Libs.Git.Instance().RewriteIgnore(excludeFile);
                 }
             }
+
+            GUILayout.Space(20);
+            GUILayout.EndScrollView();
         }
     }
 }
