@@ -22,6 +22,7 @@ namespace Lancy.Git
         public WGit()
         {
             // tabs.Add(new WindowTabChildren());
+            tabs.Add(new CommitTab());
 
             foreach (WindowTab tab in tabs)
             {

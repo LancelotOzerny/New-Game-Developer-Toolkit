@@ -1,4 +1,5 @@
 using System.IO;
+using UnityEditor.VersionControl;
 
 namespace Lancy.Libs
 {
@@ -27,6 +28,16 @@ namespace Lancy.Libs
         public void Init()
         {
             Tools.Console.Run("git init", 250);
+        }
+
+        public void IndexAll()
+        {
+            Tools.Console.Run("git add .", 750);
+        }
+
+        public void Commit(string message)
+        {
+            Tools.Console.Run($"git commit -m \"{message}\"", 250);
         }
 
         public bool Exist()

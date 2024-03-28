@@ -1,4 +1,3 @@
-using Lancy.Libs;
 using UnityEditor;
 using UnityEngine;
 
@@ -78,10 +77,10 @@ namespace Lancy.Tools.Git
 
             if (pressed)
             {
-                Lancy.Libs.Git.Instance().Init();
+                Libs.Git.Instance().Init();
                 if (createGitIgnore)
                 {
-                    Lancy.Libs.Git.Instance().RewriteIgnore(excludeFile);
+                    Libs.Git.Instance().RewriteIgnore(excludeFile);
                 }
             }
         }
