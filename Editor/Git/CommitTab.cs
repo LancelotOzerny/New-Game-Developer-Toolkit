@@ -13,13 +13,10 @@ namespace Lancy.Tools.Git
 
         public override void Show()
         {
-            GUILayout.Space(20);
             SetLabel("Commit Area");
 
-            GUILayout.Space(20);
             bool indexAll = GUILayout.Button("Indexing All", GUILayout.Height(50));
 
-            GUILayout.Space(20);
             SetLabel("Commit Message");
             commitMessage = GUILayout.TextArea(commitMessage, GUILayout.MinHeight(100));
 
