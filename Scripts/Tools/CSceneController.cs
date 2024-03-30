@@ -41,7 +41,7 @@ public class CSceneController : MonoBehaviour
     /// <param name="index">индекс открываемой сцены</param>
     public void OpenByIndex(int index)
     {
-        bool less = (index <= 0);
+        bool less = (index < 0);
         bool greather = SceneManager.sceneCountInBuildSettings <= index;
 
         if (less || greather)
