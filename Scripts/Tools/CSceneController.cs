@@ -35,6 +35,18 @@ public class CSceneController : MonoBehaviour
         OpenByIndex(Current - 1);
     }
 
+    private string OpenLevelPrefName = "LastOpenedLevel";
+    public void OpenLevel(int level)
+    {
+        int lastLevel = 0;
+        if (PlayerPrefs.HasKey(OpenLevelPrefName))
+        {
+            lastLevel = PlayerPrefs.GetInt(OpenLevelPrefName);
+        }
+
+        PlayerPrefs.SetInt(OpenLevelPrefName, level > lastLevel ? level : lastLevel);
+    }
+
     /// <summary>
     /// Метод, который позволяет открыть какую-либо сцену по индексу, если та существует
     /// </summary>
