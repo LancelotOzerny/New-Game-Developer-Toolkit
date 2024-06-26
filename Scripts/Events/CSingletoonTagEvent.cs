@@ -9,6 +9,10 @@ namespace Lancy.Events
         [Header("Event Settings")]
         [SerializeField] private List<TagEvent> tagEvents;
 
+        [Header("Debug")]
+        [SerializeField] protected bool isDebugMode;
+        protected bool IsDebugMode { get => isDebugMode; }
+
         /// <summary>
         /// Метод, который позволяет получить все текущие tagEvents объекта
         /// </summary>
